@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .active-btn {
+            display: inline-block;
+            background-color: #cd0000;
+        }
+        .active-btn:active {
+            background-color: #ae0000;
+        }
+        a{
+            color: #ffffff;
+            text-decoration: none;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<a href="javascript:" class="active-btn">按下</a>
+包含JS：
+<a href="javascript:" id="button" class="active-btn">按下</a>
+<script type="text/javascript">
+var button = document.getElementById("button");
+if (button.addEventListener) {
+    button.addEventListener("mousedown", function(event) {
+        // 此处省略N行
+        event.preventDefault();
+    });
+}
+</script>
+</body>
+</html>
